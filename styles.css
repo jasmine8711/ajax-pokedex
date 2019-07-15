@@ -22,22 +22,12 @@ body {
   display: grid;
   -ms-grid-columns: 0.5fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
       grid-template-columns: 0.5fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
-  -ms-grid-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 1fr 1fr;
-      grid-template-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 1fr 1fr;
-      grid-template-areas: "id . . . . . . . ." ". . . . . . . . ." ". img img . moves moves moves . ." ". img img . moves moves moves . ." ". . . . . . . . ." ". . . . weightpokemon heightpokemon previous species ." ". input submit . . . . . .";
+  -ms-grid-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 0.8fr 1.2fr;
+      grid-template-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 0.8fr 1.2fr;
+      grid-template-areas: "id . . . . . . . ." ". . . . . . . . ." ". img img . moves moves moves . ." ". img img . moves moves moves . ." ". . . . . . . . ." ". input submit . . previous . . ." ". . . . weightpokemon heightpokemon species . .";
 }
 
-.id {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: id;
-  display: block;
-  margin: 15px;
-  width: 100%;
-  height: 100%;
-  background: url(bubble.png);
-  background-repeat: no-repeat;
-  background-size: contain;
+.v-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +41,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.id {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: id;
+  display: block;
+  margin: 15px;
+  width: 100%;
+  height: 100%;
+  background: url(bubble.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .id #id {
@@ -80,7 +83,7 @@ body {
 }
 
 .input {
-  -ms-grid-row: 7;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: input;
   padding-bottom: 5%;
@@ -127,37 +130,48 @@ body {
   padding: 5px;
   display: block;
   width: 80%;
-  border-bottom: 1px solid #000;
+}
+
+.btnstyle {
+  width: 60%;
+  height: 42%;
+  display: block;
+  padding-top: 18%;
+  background: yellow;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 .weightpokemon {
-  -ms-grid-row: 6;
+  text-align: center;
+  -ms-grid-row: 7;
   -ms-grid-column: 5;
   grid-area: weightpokemon;
-  background: greenyellow;
 }
 
 .heightpokemon {
-  -ms-grid-row: 6;
+  text-align: center;
+  -ms-grid-row: 7;
   -ms-grid-column: 6;
   grid-area: heightpokemon;
 }
 
-.previous {
-  -ms-grid-row: 6;
+.species {
+  text-align: center;
+  -ms-grid-row: 7;
   -ms-grid-column: 7;
-  grid-area: previous;
+  grid-area: species;
 }
 
-.species {
+.previous {
   -ms-grid-row: 6;
-  -ms-grid-column: 8;
-  grid-area: species;
+  -ms-grid-column: 6;
+  grid-area: previous;
 }
 
 .submit {
   padding-bottom: 5%;
-  -ms-grid-row: 7;
+  -ms-grid-row: 6;
   -ms-grid-column: 3;
   grid-area: submit;
 }

@@ -14,9 +14,11 @@ async function getPokemon() {
   `
   );
   let pokemonDetail = await response.data;
+
+  
   imgURL = response.data.sprites.front_default;
   id = pokemonDetail.id;
-  allMovesArray = pokemonDetail.moves[0].version_group_details;
+
   const evolutionData = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${id}
   `);
 
@@ -32,10 +34,9 @@ async function getPokemon() {
   evolutionName.innerText = evolution;
 
   //show 4 moves
-  console.log(allMovesArray);
-  //get all move array
+
   for (let i = 0; i < 4; i++) {
-    moveName[i].innerText = allMovesArray[i].version_group.name;
-    console.log(allMovesArray[i].version_group.name);
+    moveName[i].innerText = i + 1 + "." + pokemonDetail.moves[i].move.name;
+    moveName[i].style.borderBottom = "1px solid black";
   }
 }
