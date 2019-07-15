@@ -1,13 +1,180 @@
 * {
   margin: 0;
   padding: 0;
-  background: black;
-  color: white;
   font-size: 20px;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#container {
+  margin: 0 auto;
+  margin-top: 3em;
+  height: 700px;
+  width: 1050px;
+  background: url(bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+      grid-template-columns: 0.5fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.5fr;
+  -ms-grid-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 1fr 1fr;
+      grid-template-rows: 0.8fr 1.2fr 1fr 1.5fr 0.5fr 1fr 1fr;
+      grid-template-areas: "id . . . . . . . ." ". . . . . . . . ." ". img img . moves moves moves . ." ". img img . moves moves moves . ." ". . . . . . . . ." ". . . . weightpokemon heightpokemon previous species ." ". input submit . . . . . .";
+}
+
+.id {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: id;
+  display: block;
+  margin: 15px;
+  width: 100%;
+  height: 100%;
+  background: url(bubble.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.id #id {
+  text-align: center;
+  font-size: 25px;
+  color: #c00d0d;
+}
+
+.img {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: img;
+  width: 100%;
+  background: url(tv.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 #pokemonImg {
-  width: 50px;
-  height: 50px;
+  width: 70%;
+  height: auto;
+  background-position-y: 10%;
+  background-position-x: 10%;
+  background-size: 120%;
+}
+
+.input {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: input;
+  padding-bottom: 5%;
+}
+
+.input #pokemonName {
+  font-size: 16px;
+  width: 80%;
+  height: 60%;
+  border-radius: 10%;
+  -webkit-box-shadow: 3px 3px 5px black;
+          box-shadow: 3px 3px 5px black;
+  border: none;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#e25801), color-stop(#f4483a), color-stop(#fc4061), color-stop(#fb4386), to(#ef52aa));
+  background-image: linear-gradient(to top, #e25801, #f4483a, #fc4061, #fb4386, #ef52aa);
+}
+
+.moves {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: moves;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), color-stop(#dfdde1), color-stop(#cac5cc), color-stop(#b8adb6), to(#a7959f));
+  background-image: linear-gradient(to bottom, #f5f5f5, #dfdde1, #cac5cc, #b8adb6, #a7959f);
+  border: white 2px solid;
+  border-radius: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moves .move {
+  padding: 5px;
+  display: block;
+  width: 80%;
+  border-bottom: 1px solid #000;
+}
+
+.weightpokemon {
+  -ms-grid-row: 6;
+  -ms-grid-column: 5;
+  grid-area: weightpokemon;
+  background: greenyellow;
+}
+
+.heightpokemon {
+  -ms-grid-row: 6;
+  -ms-grid-column: 6;
+  grid-area: heightpokemon;
+}
+
+.previous {
+  -ms-grid-row: 6;
+  -ms-grid-column: 7;
+  grid-area: previous;
+}
+
+.species {
+  -ms-grid-row: 6;
+  -ms-grid-column: 8;
+  grid-area: species;
+}
+
+.submit {
+  padding-bottom: 5%;
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  grid-area: submit;
+}
+
+.submit #btn {
+  width: 80%;
+  height: 60%;
+  border-radius: 10%;
+  -webkit-box-shadow: 3px 3px 5px black;
+          box-shadow: 3px 3px 5px black;
+  border: none;
+  background: -webkit-gradient(linear, left bottom, left top, from(#e25801), color-stop(#eb7b00), color-stop(#ef9d00), color-stop(#efbe00), to(#ebde12));
+  background: linear-gradient(to top, #e25801, #eb7b00, #ef9d00, #efbe00, #ebde12);
+}
+
+#image {
+  width: 300px;
+  background-attachment: local, scroll;
 }
 /*# sourceMappingURL=styles.css.map */
