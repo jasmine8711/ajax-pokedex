@@ -11,8 +11,8 @@ body {
 }
 #container {
   margin: 0 auto;
-  margin-top: 3em;
-  height: 95vh;
+  margin-top: 1em;
+  height: 98vh;
   width: 69vw;
   background: url(bg.png);
   background-size: cover;
@@ -26,8 +26,8 @@ body {
     ". . . . . . . . . . . ."
     ". img img img . . . previous previous previous . ."
     ". img img img . . . previous previous previous . ."
-    ". . . . . . . . . . . ."
-    ". . input submit . . . moves moves moves . ."
+    ". . . . . . . moves moves moves . ."
+    ". left input submit right . . moves moves moves . ."
     ". info info info . . . infotwo infotwo infotwo . .";
 }
 .v-center {
@@ -39,6 +39,7 @@ body {
 .id {
   grid-area: id;
   #id {
+    font-size: 4em;
     text-align: center;
     font-size: 25px;
     color: black;
@@ -70,7 +71,7 @@ body {
   display: inline-block;
   line-height: 120px;
   text-align: center;
-
+  font-weight: bolder;
   background: rgb(235, 211, 79);
   border-radius: 50%;
   border: 8px solid rgb(6, 122, 199);
@@ -108,6 +109,8 @@ body {
     border-radius: 10%;
     box-shadow: 3px 3px 5px black;
     border: none;
+    font-weight: bolder;
+    color: black;
     background-image: linear-gradient(
       to top,
       #e25801,
@@ -126,16 +129,25 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  .move {
+  .moveBox {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: black;
+    border-radius: 10%;
+
+    width: 100%;
+    height: 100%;
     padding: 5px;
+  }
+  .move {
+    color: white;
     display: block;
-    width: 65%;
   }
 }
 
 .previous {
   grid-area: previous;
-  background: rgb(194, 191, 191);
+  background: black;
   border: 8px solid rgb(6, 122, 199);
   border-radius: 10%;
   position: relative;
@@ -159,13 +171,38 @@ body {
     font-weight: bold;
     bottom: 5%;
     right: 10%;
+    color: white;
   }
 }
-
+.left {
+  grid-area: left;
+  cursor: pointer;
+  background-image: url(left.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+.left:hover {
+  background-image: url(leftblue.png);
+}
+.right {
+  grid-area: right;
+  cursor: pointer;
+  background-image: url(right.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+.right:hover {
+  background-image: url(rightblue.png);
+}
 .submit {
   padding-bottom: 5%;
   grid-area: submit;
   #btn {
+    font-weight: bolder;
     width: 80%;
     height: 60%;
     border-radius: 10%;

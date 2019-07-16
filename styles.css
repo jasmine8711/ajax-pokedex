@@ -13,8 +13,8 @@ body {
 
 #container {
   margin: 0 auto;
-  margin-top: 3em;
-  height: 95vh;
+  margin-top: 1em;
+  height: 98vh;
   width: 69vw;
   background: url(bg.png);
   background-size: cover;
@@ -26,7 +26,7 @@ body {
       grid-template-columns: 0.3fr 0.3fr 0.8fr 0.8fr 0.3fr 0.5fr 0.3fr 0.7fr 0.7fr 0.7fr 0.3fr;
   -ms-grid-rows: 0.8fr 1fr 1.2fr 1.5fr 0.4fr 0.8fr 1.2fr;
       grid-template-rows: 0.8fr 1fr 1.2fr 1.5fr 0.4fr 0.8fr 1.2fr;
-      grid-template-areas: "id id . . . . . . . . . ." ". . . . . . . . . . . ." ". img img img . . . previous previous previous . ." ". img img img . . . previous previous previous . ." ". . . . . . . . . . . ." ". . input submit . . . moves moves moves . ." ". info info info . . . infotwo infotwo infotwo . .";
+      grid-template-areas: "id id . . . . . . . . . ." ". . . . . . . . . . . ." ". img img img . . . previous previous previous . ." ". img img img . . . previous previous previous . ." ". . . . . . . moves moves moves . ." ". left input submit right . . moves moves moves . ." ". info info info . . . infotwo infotwo infotwo . .";
 }
 
 .v-center {
@@ -53,6 +53,7 @@ body {
 }
 
 .id #id {
+  font-size: 4em;
   text-align: center;
   font-size: 25px;
   color: black;
@@ -104,6 +105,7 @@ body {
   display: inline-block;
   line-height: 120px;
   text-align: center;
+  font-weight: bolder;
   background: #ebd34f;
   border-radius: 50%;
   border: 8px solid #067ac7;
@@ -153,12 +155,15 @@ body {
   -webkit-box-shadow: 3px 3px 5px black;
           box-shadow: 3px 3px 5px black;
   border: none;
+  font-weight: bolder;
+  color: black;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#e25801), color-stop(#f4483a), color-stop(#fc4061), color-stop(#fb4386), to(#ef52aa));
   background-image: linear-gradient(to top, #e25801, #f4483a, #fc4061, #fb4386, #ef52aa);
 }
 
 .moves {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 8;
   -ms-grid-column-span: 3;
   grid-area: moves;
@@ -178,10 +183,19 @@ body {
           align-items: center;
 }
 
-.moves .move {
+.moves .moveBox {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background: black;
+  border-radius: 10%;
+  width: 100%;
+  height: 100%;
   padding: 5px;
+}
+
+.moves .move {
+  color: white;
   display: block;
-  width: 65%;
 }
 
 .previous {
@@ -190,7 +204,7 @@ body {
   -ms-grid-column: 8;
   -ms-grid-column-span: 3;
   grid-area: previous;
-  background: #c2bfbf;
+  background: black;
   border: 8px solid #067ac7;
   border-radius: 10%;
   position: relative;
@@ -218,6 +232,39 @@ body {
   font-weight: bold;
   bottom: 5%;
   right: 10%;
+  color: white;
+}
+
+.left {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: left;
+  cursor: pointer;
+  background-image: url(left.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.left:hover {
+  background-image: url(leftblue.png);
+}
+
+.right {
+  -ms-grid-row: 6;
+  -ms-grid-column: 5;
+  grid-area: right;
+  cursor: pointer;
+  background-image: url(right.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.right:hover {
+  background-image: url(rightblue.png);
 }
 
 .submit {
@@ -228,6 +275,7 @@ body {
 }
 
 .submit #btn {
+  font-weight: bolder;
   width: 80%;
   height: 60%;
   border-radius: 10%;
