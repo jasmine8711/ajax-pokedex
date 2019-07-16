@@ -9,26 +9,42 @@
         content="ie=edge">
     <link rel="stylesheet"
         href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Chakra+Petch|Hind|Inconsolata|Muli|Slabo+27px|Ubuntu&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Pokémon</title>
 </head>
 
 <body>
     <div id="container">
-        <div class="id v-center">
-            <p id="id">123</p>
+        <div class="id">
+            <p id="id"
+                class="v-center">123</p>
         </div>
 
-        <div class="img">
+        <div class="img v-center">
             <img src=""
                 alt=""
-                id="pokemonImg">
+                id="pokemonImg"
+                class="v-center">
+            <p id="name"></p>
         </div>
+
 
         <div class="input">
             <input type="text"
                 id="pokemonName"
-                placeholder="  Pokemon Name">
+                placeholder="ID or Name">
+        </div>
+
+        <div class="info">
+            <p id="types"
+                class="btnstyle">Types</p>
+            <p id="color"
+                class="btnstyle">Color</p>
+            <p id="habitat"
+                class="btnstyle">habitat</p>
         </div>
 
         <div class="submit">
@@ -42,23 +58,21 @@
             <P class="move"></P>
         </div>
 
-        <div class="weightpokemon">
+        <div class="infotwo">
             <p id="weight"
-                class="btnstyle">50kg</p>
-        </div>
-
-        <div class="heightpokemon">
+                class="btnstyle">Weight</p>
             <p id="height"
-                class="btnstyle">150cm</p>
-        </div>
-
-        <div class="species">
+                class="btnstyle">Height</p>
             <p id="species"
-                class="btnstyle ">water</p>
+                class="btnstyle">Species</p>
         </div>
 
         <div class="previous v-center">
-            <p id="evolution">evolution</p>
+            <h2 id="title">Evolved From</h2>
+            <img src=""
+                alt=""
+                id="evolvesFrom">
+            <p id="evolution"></p>
         </div>
     </div>
 
